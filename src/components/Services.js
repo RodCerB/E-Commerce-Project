@@ -1,9 +1,32 @@
 import React from 'react'
 import styled from 'styled-components'
 import { services } from '../utils/constants'
+// Assim como fizemos para os links, nós pré-setamos todas as informações que iriam no componente Services em um array num arquivo separados(lá em utils/constants). Até poderíamos escrever ele na mão, até pq é algo que aparece apenas nessa página, mas para deixar o código mais limpo, foi feito dessa forma
 
 const Services = () => {
-  return <h4>services </h4>
+  return <Wrapper>
+    <div className="section-center">
+      <article className="header">
+        <h3>
+          custom furniture <br/>
+          built only for you
+        </h3>
+        <p>
+          Lorem ipsum dolor sit amet, consectetur adipisicing elit. Numquam neque mollitia reiciendis voluptatem hic assumenda voluptate molestias maiores totam. Praesentium!
+        </p>
+      </article>
+      <div className="services-center">
+        {services.map((service)=>{
+          const {id,icon,title,text} = service;
+          return <article key={id} className='service'>
+            <span className='icon'>{icon}</span>
+            <h4>{title}</h4>
+            <p>{text}</p>
+          </article>
+        })}
+      </div>
+    </div>
+  </Wrapper>
 }
 
 const Wrapper = styled.section`
