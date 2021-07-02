@@ -7,10 +7,16 @@ const Contact = () => {
       <h3>Join our newsletter and get 20% off</h3>
       <div className="content">
         <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Ab facilis repellendus laboriosam ratione alias aliquid enim dicta sunt earum neque?</p>
-        <form className='contact-form'>
+        {/* para esse projeto nós usamos o Formspree para gerenciar os emails que formos receber na caixa de contato. Para usar ele precisamos dar nomes corretos e outras configs(como o action e method), seguindo o tutorial deles. */}
+        <form 
+          className='contact-form'
+          action="https://formspree.io/f/xbjqkpgr"
+          method="POST" 
+        >
           <input 
             type="email" 
             className='form-input' placeholder='enter email'
+            name="_replyto"
           />
           <button type='submit' className='submit-btn'>subscribe</button>
         </form>
