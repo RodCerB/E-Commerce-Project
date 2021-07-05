@@ -30,6 +30,9 @@ const products_reducer = (state, action) => {
       // featured_products tem o mesmo nome, nao precisa fazer :featu.... 
       featured_products}
   }
+  if(action.type === GET_SINGLE_PRODUCT_ERROR){
+    return {...state, products_loading:false, products_error:true}
+  }
   return state
   throw new Error(`No Matching "${action.type}" - action type`)
 }
