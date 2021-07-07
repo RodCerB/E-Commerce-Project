@@ -10,7 +10,12 @@ const ProductImages = ({images = [{url:''}]}) => {
     <img src={main.url} alt="main image" className='main'/>
     <div className='gallery'>
       {images.map((image, index)=>{
-        return <img src={image.url} alt={image.filename} key={index} onClick={()=> setMain(images[index])} className={`${image.url === main.url ? 'active' : null}`}/>
+        return <img 
+          src={image.url} 
+          alt={image.filename} 
+          key={index} 
+          onClick={()=> setMain(images[index])} 
+          className={`${image.url === main.url ? 'active' : null}`}/>
       })}
     </div>
   </Wrapper>
